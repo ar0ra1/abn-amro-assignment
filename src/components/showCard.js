@@ -1,13 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
-export const ShowCard = ({ data }) => {
+const ShowCardComponent = ({ data }) => {
   const { name, id, image, language, rating, genres } = data;
 
   return (
     <div className="flex flex-col max-w-sm overflow-hidden transition-all rounded shadow-lg hover:shadow-2xl hover:scale-105">
       <Link to={`/show/${id}`}>
         <img
+          loading="lazy"
           className="object-fill w-full h-96"
           src={`${image.original}`}
           alt={`${name}`}
@@ -33,3 +34,5 @@ export const ShowCard = ({ data }) => {
     </div>
   );
 };
+
+export const ShowCard = memo(ShowCardComponent);
