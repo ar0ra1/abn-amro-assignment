@@ -23,7 +23,7 @@ const ShowCardComponent = ({ data }) => {
             {genres.map((genre, id) => (
               <span
                 key={id}
-                className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full"
+                className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-white rounded-full bg-abn-green"
               >
                 {genre}
               </span>

@@ -2,14 +2,14 @@ import React, { memo } from "react";
 
 const GenreComponent = ({ allGeneres, onGenreClick, selectedGenre }) => {
   return (
-    <div className="inline-flex gap-5">
-      <h3 className="mr-5 text-xl">Genres</h3>
+    <div className="inline-flex flex-wrap gap-5">
+      <h3 className="mr-5 text-xl font-bold">Genres</h3>
       {allGeneres.map((genre) => (
         <button
           value={genre}
           onClick={onGenreClick}
-          className={`hover:border-b-2 ${
-            selectedGenre === genre && "border-b-teal-200 border-b-2"
+          className={`hover:border-b-2 hover:border-b-abn-yellow ${
+            selectedGenre === genre && "border-b-abn-green border-b-2"
           }`}
           key={genre}
         >

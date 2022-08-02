@@ -68,8 +68,8 @@ export const AllShows = () => {
   }
 
   return (
-    <div className="container w-full p-10 mx-auto my-10">
-      <div className="flex justify-between mb-6">
+    <div className="container w-full mx-auto my-10">
+      <div className="flex flex-col justify-between gap-4 mb-6 md:flex-row">
         <Genre
           allGeneres={allGeneres}
           onGenreClick={onGenreClick}

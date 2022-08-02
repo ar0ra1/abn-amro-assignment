@@ -2,10 +2,10 @@ import React, { memo } from "react";
 
 const SearchComponent = ({ onSearchChange }) => {
   return (
-    <div className="inline-flex gap-2">
-      <h3 className="mr-5 text-xl">Search</h3>
+    <div className="inline-flex gap-1">
+      <h3 className="mr-5 text-xl font-bold">Search</h3>
       <input
-        className="px-2 border-b-2"
+        className="px-2 border-b-2 outline-none border-b-abn-yellow"
         type="text"
         onChange={onSearchChange}
       />

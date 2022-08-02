@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders default layout", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  // check if suspense is working
+  const navHeading = screen.getByTestId("nav-heading");
+  expect(navHeading).toBeInTheDocument();
+
+  const footerAuthor = screen.getByTestId("footer-author");
+  expect(footerAuthor).toBeInTheDocument();
+
+  const footerGithub = screen.getByTestId("footer-github");
+  expect(footerGithub).toBeInTheDocument();
 });
