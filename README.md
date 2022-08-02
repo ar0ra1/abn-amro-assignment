@@ -41,4 +41,5 @@
 ## CLI
 
 - `yarn run start` to start (do install using yarn first)
+- or use docker `docker compose -f docker-compose.dev.yml up --build`
 - `yarn run test` to test
