@@ -16,7 +16,7 @@ export const TransitionState = ({ type }) => {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <h2 data-testid={type} className="text-2xl">
+      <h2 data-testid={type || "default"} className="text-2xl">
         {message()}
       </h2>
     </div>

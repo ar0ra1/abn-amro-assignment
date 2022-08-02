@@ -20,14 +20,16 @@ const ShowCardComponent = ({ data }) => {
           <p data-testid="rating">Rating: {rating.average}</p>
           <p data-testid="language">Language: {language}</p>
           <div data-testid="genre">
-            {genres.map((genre, id) => (
-              <span
-                key={id}
-                className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-white rounded-full bg-abn-green"
-              >
-                {genre}
-              </span>
-            ))}
+            {genres
+              ? genres.map((genre, id) => (
+                  <span
+                    key={id}
+                    className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-white rounded-full bg-abn-green"
+                  >
+                    {genre}
+                  </span>
+                ))
+              : "Not Available"}
           </div>
         </div>
       </Link>

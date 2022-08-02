@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Cast } from "../components/cast";
 import { SideBar } from "../components/sidebar";
 import { TransitionState } from "../components/transitionState";
@@ -8,6 +8,13 @@ import useRequest from "../lib/useRequest";
 export const SingleShow = () => {
   const params = useParams();
   const showId = params?.id;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!showId || isNaN(showId)) {
+      navigate("/");
+    }
+  }, [navigate, showId]);
 
   const { data: infoWithCast, error } = useRequest(
     `shows/${showId}?embed=cast`
@@ -22,9 +29,13 @@ export const SingleShow = () => {
   }
 
   return (
-    <div className="flex flex-col">
-      <div className="inline-flex items-center rounded-sm bg-abn-green">
-        <Link to="/" className="h-full px-4 py-2 bg-abn-yellow ">
+    <div className="flex flex-col" data-testid="component">
+      <div className="inline-flex items-center rounded-md bg-abn-green">
+        <Link
+          data-testid="go-back"
+          to="/"
+          className="h-full px-4 py-2 rounded-l-md bg-abn-yellow"
+        >
           Go Back
         </Link>
         <h2 className="ml-4 text-2xl font-bold text-white">
@@ -36,6 +47,7 @@ export const SingleShow = () => {
           <div className="flex flex-col gap-4 md:gap-6 md:col-start-1 md:col-end-5">
             <strong className="text-xl">Summary: </strong>
             <div
+              data-testid="summary"
               dangerouslySetInnerHTML={{ __html: infoWithCast.summary }}
             ></div>
           </div>

@@ -5,6 +5,7 @@ import { Nav } from "./components/nav";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { AllShows } from "./pages/allShows";
 import { SingleShow } from "./pages/singleShow";
+import { ScrollTop } from "./hooks/scrollTop";
 
 const App = () => {
   return (
@@ -12,10 +13,12 @@ const App = () => {
       <Nav />
       <div className="p-10">
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<AllShows />} />
-            <Route path="/show/:id" element={<SingleShow />} />
-          </Routes>
+          <ScrollTop>
+            <Routes>
+              <Route path="/" element={<AllShows />} />
+              <Route path="/show/:id" element={<SingleShow />} />
+            </Routes>
+          </ScrollTop>
         </BrowserRouter>
       </div>
       <Footer />

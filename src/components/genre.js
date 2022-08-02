@@ -2,7 +2,7 @@ import React, { memo } from "react";
 
 const GenreComponent = ({ allGeneres, onGenreClick, selectedGenre }) => {
   return (
-    <div className="inline-flex flex-wrap gap-5">
+    <div className="inline-flex flex-wrap gap-5 md:gap-3">
       <h3 className="mr-5 text-xl font-bold">Genres</h3>
       {allGeneres.map((genre) => (
         <button

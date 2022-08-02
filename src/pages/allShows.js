@@ -69,7 +69,7 @@ export const AllShows = () => {
 
   return (
     <div className="container w-full mx-auto my-10">
-      <div className="flex flex-col justify-between gap-4 mb-6 md:flex-row">
+      <div className="flex flex-col justify-between gap-4 mb-6 lg:flex-row">
         <Genre
           allGeneres={allGeneres}
           onGenreClick={onGenreClick}
